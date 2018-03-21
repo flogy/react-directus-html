@@ -1,25 +1,26 @@
 /**
- * @class ExampleComponent
+ * @class DirectusHtml
  */
 
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import ReactHtmlParser from 'react-html-parser'
+import { css } from 'aphrodite'
 
+export default class DirectusHtml extends Component {
+    transformHtmlNode(node) {
+        if (node.type === 'tag' && this.props.elementStyles[node.name]) {
+            node.attribs['class'] = css(this.props.elementStyles[node.name]);
+        }
+        if (node.type === 'tag' && node.name === 'img' && node.attribs['src'].startsWith('/')) {
+            node.attribs['src'] = this.props.directusUrl + node.attribs['src'];
+        }
+    }
 
-export default class ExampleComponent extends Component {
-  static propTypes = {
-    text: PropTypes.string
-  }
-
-  render() {
-    const {
-      text
-    } = this.props
-
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
-  }
+    render() {
+        return (
+            <div className={css(this.props.containerStyle)}>
+                {this.props.children ? ReactHtmlParser(this.props.children, { transform: this.transformHtmlNode.bind(this) }) : 'Loading...'}
+            </div>
+        );
+    }
 }
