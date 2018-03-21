@@ -1,6 +1,6 @@
 {
   "name": "react-directus-html",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React component to style and render HTML code received from Directus.",
   "author": "Florian Gyger",
   "license": "MIT",
