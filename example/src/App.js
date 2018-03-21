@@ -7,22 +7,22 @@ export default class App extends Component {
   render () {
     return (
       <DirectusHtml containerStyle={styles.container}
-                    elementStyles={elementStyles}
-                    directusUrl="http://localhost:8080">
-          {"<h2>HTML that is not really from Directus</h2>"}
+        elementStyles={elementStyles}
+        directusUrl='http://localhost:8080'>
+        {'<h2>HTML that is not really from Directus</h2>'}
       </DirectusHtml>
     )
   }
 }
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: 'black',
-    },
-});
+  container: {
+    backgroundColor: 'black'
+  }
+})
 
 const elementStyles = StyleSheet.create({
-    h2: {
-        color: 'yellow',
-    },
-});
+  h2: {
+    color: 'yellow'
+  }
+})
