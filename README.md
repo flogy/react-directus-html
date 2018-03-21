@@ -28,4 +28,4 @@ class Example extends Component {
 
 ## License
 
-MIT © [flogy](https://github.com/flogy)
+MIT © [Florian Gyger](https://github.com/flogy)

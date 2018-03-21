@@ -2,7 +2,7 @@
   "name": "react-directus-html",
   "version": "0.1.0",
   "description": "React component to style and render HTML code received from Directus.",
-  "author": "flogy",
+  "author": "Florian Gyger",
   "license": "MIT",
   "repository": "flogy/react-directus-html",
   "main": "dist/index.js",
